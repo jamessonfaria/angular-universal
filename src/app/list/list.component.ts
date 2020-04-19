@@ -11,12 +11,13 @@ export class ListComponent implements OnInit {
 
   list = [];
   query = '';
+  key = 'query';
 
   constructor(
     private http: HttpClient,
     private activatedRoute: ActivatedRoute
-  ) { 
-    this.query = this.activatedRoute.snapshot.params['query'];
+  ) {
+    this.query = this.activatedRoute.snapshot.params[this.key];
   }
 
   ngOnInit(): void {
